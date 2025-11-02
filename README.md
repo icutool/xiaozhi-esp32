@@ -112,6 +112,12 @@ v1 的稳定版本为 1.9.2，可以通过 `git checkout v1` 来切换到 v1 版
 
 👉 [新手烧录固件教程](https://ccnphfhqs21z.feishu.cn/wiki/Zpz4wXBtdimBrLk25WdcXzxcnNS)
 
+
+merge bin命令
+``` json
+esptool.py --chip esp32c3 merge_bin -o merged.bin 0x0 build\bootloader\bootloader.bin 0x8000 build\partition_table\partition-table.bin 0xd000 build\ota_data_initial.bin 0x20000 build\xiaozhi.bin 0x800000 build\generated_assets.bin --flash_size 16MB
+```
+
 ### 开发环境
 
 - Cursor 或 VSCode

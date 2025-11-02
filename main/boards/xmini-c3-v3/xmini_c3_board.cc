@@ -37,13 +37,13 @@ private:
             if (is_charging) {
                 power_save_timer_->SetEnabled(false);
             } else {
-                power_save_timer_->SetEnabled(true);
+                power_save_timer_->SetEnabled(false);
             }
         });
     }
 
     void InitializePowerSaveTimer() {
-        power_save_timer_ = new PowerSaveTimer(160, 300);
+        power_save_timer_ = new PowerSaveTimer(160, 12*60*60);
         power_save_timer_->OnEnterSleepMode([this]() {
             GetDisplay()->SetPowerSaveMode(true);
         });

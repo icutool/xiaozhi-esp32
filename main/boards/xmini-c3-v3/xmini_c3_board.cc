@@ -43,14 +43,14 @@ private:
     }
 
     void InitializePowerSaveTimer() {
-        power_save_timer_ = new PowerSaveTimer(160, 12*60*60);
+        power_save_timer_ = new PowerSaveTimer(160, 600);
         power_save_timer_->OnEnterSleepMode([this]() {
             GetDisplay()->SetPowerSaveMode(true);
         });
         power_save_timer_->OnExitSleepMode([this]() {
             GetDisplay()->SetPowerSaveMode(false);
         });
-        power_save_timer_->SetEnabled(true);
+        power_save_timer_->SetEnabled(false);
     }
 
     void InitializeCodecI2c() {

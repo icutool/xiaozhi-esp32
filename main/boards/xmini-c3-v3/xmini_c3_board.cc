@@ -33,13 +33,13 @@ private:
 
     void InitializePowerManager() {
         adc_battery_monitor_ = new AdcBatteryMonitor(ADC_UNIT_1, ADC_CHANNEL_3, 100000, 100000, GPIO_NUM_12);
-        adc_battery_monitor_->OnChargingStatusChanged([this](bool is_charging) {
-            if (is_charging) {
-                power_save_timer_->SetEnabled(false);
-            } else {
-                power_save_timer_->SetEnabled(false);
-            }
-        });
+        // adc_battery_monitor_->OnChargingStatusChanged([this](bool is_charging) {
+        //     if (is_charging) {
+        //         power_save_timer_->SetEnabled(false);
+        //     } else {
+        //         power_save_timer_->SetEnabled(false);
+        //     }
+        // });
     }
 
     void InitializePowerSaveTimer() {
